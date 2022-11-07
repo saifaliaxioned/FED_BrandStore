@@ -7,36 +7,52 @@
   <title> DNK | Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
-  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico">
   <!--font-awesome link for icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/style.css">
 </head>
-
-<body>
+<body class="login-page">
   <!--container start-->
   <div class="container">
     <!--header section start-->
     <header>
-
+      <div class="wrapper">
+        <h1 class="login-logo"><a href="#FIXME" title="DNK"><img src="assets/images/logo1-free-img.png" alt="DNK"></a></h1>
+      </div>
     </header>
     <!--header section start-->
     <!--main section start-->
     <main>
-
+      <!-- login section start -->
+      <section class="user-login">
+        <div class="wrapper">
+          <div class="form-container">
+            <form action="#FIXME" name="login-form">
+              <h2>login</h2>
+              <div class="input-group">
+                <label>username</label>
+                <input type="text" placeholder="username@mail.com">
+                <span class="input-error">error</span>
+              </div>
+              <div class="input-group">
+                <label>password</label>
+                <input type="password" placeholder="Password">
+                <span class="input-error">error</span>
+              </div>
+              <div class="input-control">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- login section end -->
     </main>
     <!--main section end-->
-
-    <!--footer section start-->
-    <footer>
-
-    </footer>
-    <!--footer section end-->
-
   </div>
   <!--container end-->
   <script src="assets/js/script.js"></script>
 </body>
-
 </html>
