@@ -82,6 +82,12 @@ sub { bottom: -.25em; }
 .cf { *zoom: 1; }
 
 /*for all*/
+*,*::before,*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -106,12 +112,42 @@ li {
 /*=================================
   Header styling starts here
 =================================*/
+/* header start */
+header, header .wrapper { width: 100%; }
 
+header {
+  padding: 20px 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.1);
+}
 
+.header-content { padding: 0 2%; }
+.header-content,nav,.logout-btn { display: flex; }
+.hamburger { display: none; }
+.logo { flex-basis: 7.5%; }
+nav,.logout-btn { align-items: center; }
 
+nav {
+  margin: 0 2%;
+  flex-basis: 82.2%;
+  justify-content: space-between;
+}
 
+.left-menu,.right-menu {
+  display: flex;
+  gap: 20px;
+}
 
-
+.nav-list a,.logout-btn a {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color:  rgba(255,255,255,.7);
+}
+/* header end */
 /*=================================
   Header styling ends here
 =================================*/  
@@ -119,7 +155,67 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+/* banner section start */
+.banner {
+  max-height: 626px;
+  height: 626px;
+  background: url('../images/home-new-bg-free-img.jpeg') no-repeat fixed top -68px center;
+  background-size: cover;
+  color: rgb(255,255,255);
+}
 
+
+.banner .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg,rgba(33,103,148,.5),rgba(0,0,0,.5));
+}
+
+.banner-content {
+  width: 62%;
+  position: absolute;
+  top: 50%;
+  left: 19%;
+  transform: translateY(-50%);
+}
+
+.banner-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.white-btn,.find-more {
+  padding: 10px 18px;
+  border: 1px solid rgb(255,255,255);
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .4s ease;
+}
+
+.white-btn {
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.find-more { color: rgb(255,255,255); }
+
+.banner-content h2 {
+  width: 50%;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.banner-content span {
+  padding: 25px 0 32px;
+  display: inline-block;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+/* banner section end */
 
 
 
