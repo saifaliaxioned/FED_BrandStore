@@ -260,7 +260,7 @@ nav {
 /* clients section end */
 
 /* offers section start */
-.offers { padding-bottom: 84px; }
+.offers { padding-bottom: 82px; }
 .offers .wrapper { width: 60.2%; }
 
 .offer-items {
@@ -314,6 +314,102 @@ nav {
 .offer-list:nth-child(3) .offer-image img { object-position: right; }
 .offer-btn { padding: 10px 0 30px 11.9%; }
 /* offers section end */
+
+/* products section start */
+.products {
+  padding: 60px 0 35px;
+  background: rgb(245,247,249);
+}
+
+.products .wrapper { width: 69%; }
+
+.sectin-heading {
+  padding: 20px 0;
+  position: relative;
+  font-size: 31px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sectin-heading::after {
+  content: '';
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: rgb(81,152,220);
+  transform: translateX(-50%);
+}
+
+.product-items {
+  padding: 38px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 14px;
+}
+
+.product-list { flex: 0 0 18.5%; }
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details h3 {
+  padding: 10px 0 7px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.canceled-price { text-decoration: line-through; }
+.rating-items,.color-items { display: flex; }
+.color-items { gap: 10px; }
+.product-category { text-transform: capitalize; }
+.product-category { font-size: 9px; }
+
+.product-price { 
+  padding: 7px 0 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.product-category,.canceled-price { color: rgb(137, 130, 130); }
+
+.rating-list span,.color-list span{
+  text-indent: -9999px;
+  display: inline-block;
+}
+
+
+.rating-list span::before,.color-list span::before {
+  font-family: 'FontAwesome';
+  float: left;
+  text-indent: 0;
+}
+
+.rating-list span::before {
+  content: '\f005';
+  font-size: 9px;
+}
+
+.color-list span::before {
+  padding: 10px 0;
+  content: '\f111';
+  font-size: 13px;
+}
+
+.blue::before { color: rgb(47,132,214); }
+.green::before { color: rgb(129,215,66); }
+.orange::before { color: rgb(206,89,46); }
+.black::before { color: rgb(0,0,0); }
+.brown::before { color: rgb(170,118,39); }
+.light-blue::before { color: rgb(54,177,193); }
+.light-orange::before { color:rgb(244,153,33); }
+.purple::before { color:rgb(206,37,232); }
+/* products section end */
 
 /*=================================
   main styling ends here
