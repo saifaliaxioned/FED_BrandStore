@@ -480,6 +480,20 @@ nav {
   line-height: 2;
 }
 /* services section end */
+
+/* category page start */
+/* category header start */
+.category-page header {
+  position: static;
+  background: rgb(255,255,255);
+}
+
+.category-page .logo { flex-basis: 6.5%;} 
+.category-page nav { flex-basis: 83.2%;} 
+.category-page .nav-list a,.category-page .logout-btn a { color: rgb(0,0,0); }
+/* category header end */
+
+/* category page end */
 /*=================================
   main styling ends here
 =================================*/
