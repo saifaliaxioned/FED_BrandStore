@@ -566,7 +566,7 @@ footer .wrapper { width: 62.3%; }
 }
 /* footer middle end */
 /* footer bottom start */
-.footer-bottom { padding: 25px 0; }
+.footer-bottom { padding: 22px 0 20px; }
 
 .footer-bottom .wrapper {
   display: flex;
@@ -574,7 +574,7 @@ footer .wrapper { width: 62.3%; }
 }
 
 .footer-bottom p {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: capitalize;
 }
 
