@@ -484,14 +484,145 @@ nav {
 /* category page start */
 /* category header start */
 .category-page header {
+  padding: 22px 0;
   position: static;
   background: rgb(255,255,255);
 }
 
-.category-page .logo { flex-basis: 6.5%;} 
+.category-page .header-content { padding: 0 1.8%; }
+.category-page .logo { flex-basis: 6.7%;} 
 .category-page nav { flex-basis: 83.2%;} 
 .category-page .nav-list a,.category-page .logout-btn a { color: rgb(0,0,0); }
 /* category header end */
+
+/* category main section start */
+.category-main { background: rgb(245,247,249); }
+.category-main .wrapper { width: 71.2%; }
+
+.main-content {
+  padding: 45px 0;
+  display: flex;
+  gap: 30px;
+}
+
+.side-bar { flex-basis: 23%; }
+.store-container {
+  padding: 60px;
+  flex-basis: 70%;
+  background: rgb(255,255,255);
+}
+
+/* sidebar start */
+/* search form start */
+.search-form {
+  display: flex;
+  gap: 5px;
+}
+
+.search-form input { outline: none; }
+.search-form span { position: relative; }
+.search-form .input-group{ flex-basis: 86%; }
+
+.search-form .input-group input{
+  width: 100%;
+  padding: 8px 5px;
+  border: 1px solid rgb(224, 221, 221);
+  font-size: 11px;
+}
+
+.search-form .input-control input{
+  padding: 8px 13px;
+  border: none;
+  background: rgb(47,132,214);
+  text-indent: -9999px;
+}
+
+.search-form span::before {
+  content: '\f054';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: rgb(255,255,255);
+  font-family: "FontAwesome";
+  font-size: 11px;
+  transform: translate(-50%,-50%);
+}
+/* search form end */
+
+/* price form start */
+.price-form {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-form .input-group {
+  flex-basis: 100%;
+  position: relative;
+}
+
+.price-form .input-group label {
+  display: block;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.price-form .input-group > input {
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.price-form .input-group > input {
+  outline: none;
+  background: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 30%,
+    rgb(0,0,0) 30%,
+    rgb(0,0,0) 60%,
+    transparent 60%,
+    transparent 100%
+    );
+    -webkit-appearance: none;
+  }
+
+.price-form .input-group > input::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgb(0,0,0);
+  border-radius: 100%;
+  background: rgb(0,0,0);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.price-form .input-control {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter-btn input {
+  padding: 6px 15px;
+  border: none;
+  outline: none;
+  background: rgb(47,132,214);
+  color: rgb(255,255,255);
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.price-range { font-size: 10px; }
+.min-price,.max-price { font-weight: 600; }
+/* price form end */
+
+/* sidebar end */
+/* category main section end */
 
 /* category page end */
 /*=================================
