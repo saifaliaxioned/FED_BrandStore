@@ -129,6 +129,7 @@ header {
 .hamburger { display: none; }
 .logo { flex-basis: 7.5%; }
 nav,.logout-btn { align-items: center; }
+.logout-btn { padding-top: 3px; }
 
 nav {
   margin: 0 2%;
@@ -497,18 +498,19 @@ nav {
 
 /* category main section start */
 .category-main { background: rgb(245,247,249); }
-.category-main .wrapper { width: 71.2%; }
+.category-main .wrapper { width: 69%; }
 
 .main-content {
   padding: 45px 0;
   display: flex;
-  gap: 30px;
+  gap: 44px;
 }
 
-.side-bar { flex-basis: 23%; }
+.side-bar { flex-basis: 21.5%; }
+
 .store-container {
   padding: 60px;
-  flex-basis: 70%;
+  flex-basis: 77%;
   background: rgb(255,255,255);
 }
 
@@ -567,6 +569,8 @@ nav {
   text-transform: capitalize;
 }
 
+.input-group label span { text-transform: none; }
+
 .price-form .input-group > input {
   width: 100%;
   margin: 10px 0;
@@ -608,7 +612,7 @@ nav {
 }
 
 .filter-btn input {
-  padding: 6px 15px;
+  padding: 4px 13px;
   border: none;
   outline: none;
   background: rgb(47,132,214);
@@ -620,6 +624,55 @@ nav {
 .price-range { font-size: 10px; }
 .min-price,.max-price { font-weight: 600; }
 /* price form end */
+
+/* categories part start */
+.categories h2,.sellers h2 {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.categories h2 { padding-top: 10px; }
+
+.category-items {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.category-list a {
+  color: rgb(0,0,0);
+  text-transform: capitalize;
+}
+/* categories part end */
+
+/* sellers part start */
+.sellers h2 { padding: 20px 0 15px; }
+
+.seller-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-list {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(240, 236, 236);
+  display: flex;
+  gap: 10px;
+}
+
+.seller-list .product-image { flex-basis: 25%; }
+.seller-list h3 { padding: 0 0 5px; }
+.seller-list .product-price { padding: 0; }
+
+.seller-list .product-price,.seller-list h3 { font-weight: normal; }
+/* sellers part end */
 
 /* sidebar end */
 /* category main section end */
