@@ -221,7 +221,7 @@ nav {
 .clients { padding: 60px 0; }
 
 .clients .wrapper {
-  width: 60.2%;
+  width: 60%;
   position: relative;
 }
 
@@ -239,7 +239,7 @@ nav {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 0;
   transform: translateY(-50%);
 }
@@ -326,7 +326,7 @@ nav {
 .sectin-heading {
   padding: 20px 0;
   position: relative;
-  font-size: 31px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   text-transform: capitalize;
@@ -344,10 +344,10 @@ nav {
 }
 
 .product-items {
-  padding: 38px 0;
+  padding: 40px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 14px;
+  gap: 23px 14px;
 }
 
 .product-list { flex: 1 0 18.5%; }
@@ -415,7 +415,7 @@ nav {
 .special { background: rgb(245,247,249); }
 
 .special .wrapper{
-  background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url('../images/banner-03.jpeg') no-repeat fixed bottom -160px center;
+  background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url('../images/banner-03.jpeg') no-repeat fixed top center;
   background-size: cover;
   color: rgb(255,255,255);
 }
@@ -445,9 +445,41 @@ nav {
 .special-discount { font-size: 14px; }
 .special-discount span,.footer-bottom span{ text-transform: lowercase; }
 .special-discount,.special-discount span { font-weight: 600; }
-.special-btn { padding: 10px 0 2px; }
+.special-btn { padding: 8px 0 2px; }
 .special .white-btn { padding: 10px 20px; }
 /* special section end */
+
+/* services section start */
+.services {
+  padding: 82px 0 92px;
+  background: rgb(245,247,249);
+}
+
+.services .wrapper { width: 60%; }
+.service-image img { width: 20%; }
+
+.service-items {
+  display: flex;
+  gap: 30px;
+}
+
+.service-list {
+  flex-basis: 27%;
+  text-align: center;
+}
+
+.service-list h4 {
+  padding: 20px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.service-list p {
+  font-size: 11px;
+  line-height: 2;
+}
+/* services section end */
 
 /*=================================
   main styling ends here
