@@ -106,7 +106,7 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 72.2%; 
+  width: 72.1%; 
   margin: 0 auto;
 }
 /*=================================
@@ -317,7 +317,7 @@ nav {
 
 /* products section start */
 .products {
-  padding: 60px 0 35px;
+  padding: 60px 0 32px;
   background: rgb(245,247,249);
 }
 
@@ -350,7 +350,7 @@ nav {
   gap: 20px 14px;
 }
 
-.product-list { flex: 0 0 18.5%; }
+.product-list { flex: 1 0 18.5%; }
 
 .product-details {
   display: flex;
@@ -415,7 +415,7 @@ nav {
 .special { background: rgb(245,247,249); }
 
 .special .wrapper{
-  background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url('../images/banner-03.jpeg') no-repeat fixed top 57px  center;
+  background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url('../images/banner-03.jpeg') no-repeat fixed bottom -160px center;
   background-size: cover;
   color: rgb(255,255,255);
 }
@@ -445,9 +445,8 @@ nav {
 .special-discount { font-size: 14px; }
 .special-discount span,.footer-bottom span{ text-transform: lowercase; }
 .special-discount,.special-discount span { font-weight: 600; }
-.special-btn { padding: 10px 0 7px; }
+.special-btn { padding: 10px 0 2px; }
 .special .white-btn { padding: 10px 20px; }
-
 /* special section end */
 
 /*=================================
