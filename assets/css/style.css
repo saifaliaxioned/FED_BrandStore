@@ -217,9 +217,49 @@ nav {
 }
 /* banner section end */
 
+/* clients section start */
+.clients {
+  padding: 60px 0;
+}
 
+.clients .wrapper {
+  width: 60.2%;
+  position: relative;
+}
 
+.clients-items {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 70px;
+  overflow-x: hidden;
+  justify-content: center;
+}
 
+.client-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.clients-image { width: 90px; }
+.client-btn { text-indent: -9999px; }
+
+.client-btn::before {
+  text-indent: 0;
+  font-family: "FontAwesome";
+  font-size: 13px;
+  float: left;
+  color: rgb(226, 219, 219);
+}
+
+.prev::before { content: '\f053'; }
+.next::before { content: '\f054'; }
+/* clients section end */
 
 
 
