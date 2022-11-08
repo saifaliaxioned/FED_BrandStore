@@ -493,7 +493,10 @@ nav {
 .category-page .header-content { padding: 0 1.8%; }
 .category-page .logo { flex-basis: 6.7%;} 
 .category-page nav { flex-basis: 83.2%;} 
-.category-page .nav-list a,.category-page .logout-btn a { color: rgb(0,0,0); }
+.category-page .nav-list a,.category-page .logout-btn a { 
+  color: rgb(0,0,0);
+  font-weight: normal;
+}
 /* category header end */
 
 /* category main section start */
@@ -509,7 +512,7 @@ nav {
 .side-bar { flex-basis: 21.5%; }
 
 .store-container {
-  padding: 60px;
+  padding: 59px 8%;
   flex-basis: 77%;
   background: rgb(255,255,255);
 }
@@ -574,8 +577,8 @@ nav {
 .price-form .input-group > input {
   width: 100%;
   margin: 10px 0;
-  cursor: pointer;
   position: absolute;
+  cursor: pointer;
 }
 
 .price-form .input-group > input {
@@ -670,11 +673,71 @@ nav {
 .seller-list .product-image { flex-basis: 25%; }
 .seller-list h3 { padding: 0 0 5px; }
 .seller-list .product-price { padding: 0; }
-
 .seller-list .product-price,.seller-list h3 { font-weight: normal; }
 /* sellers part end */
-
 /* sidebar end */
+
+/* store start */
+/* breadcrumb start */
+.breadcrumb { padding-bottom: 23px; }
+.breadcrumb li+li:before { content: "/\00a0"; }
+
+.breadcrumb a ,.breadcrumb li+li:before {
+  color: rgb(0,0,0);
+  font-size: 10px;
+  text-transform: capitalize;
+}
+/* breadcrumb end */
+
+/* result start */
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result li { font-size: 11px; }
+
+.dropdown-list { 
+  position: relative;
+  flex-basis: 27%;
+}
+
+.result-dropdown::after {
+  content: '\f078';
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "FontAwesome";
+  font-size: 10px;
+}
+/* result end */
+
+/* product list start */
+.store-container .product-items {
+  padding: 37px 0;
+  gap: 25px 14px;
+}
+
+.store-container .product-list { flex: 1 0 23.5%; }
+.store-container .product-list h3 { font-size: 10px; }
+/* product list end */
+
+/* pagination start */
+.pagination-items {
+  padding: 20px 0 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-list span{
+  padding: 7px 10px;
+  border: 1px solid rgb(0,0,0);
+  border-top: 2px solid rgb(0,0,0);
+  font-size: 10px;
+}
+/* pagination end */
+
+/* store end */
 /* category main section end */
 
 /* category page end */
