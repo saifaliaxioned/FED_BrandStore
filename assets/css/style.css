@@ -1080,6 +1080,10 @@ footer .wrapper { width: 62.3%; }
   /* banner section start */
   .banner { height: 80vh; }
   /* banner section end */
+
+  /* category page start */
+  .category-main .wrapper { width: 94%; }
+  /* category page end */
 }
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
