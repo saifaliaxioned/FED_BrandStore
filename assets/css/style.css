@@ -1091,7 +1091,6 @@ footer .wrapper { width: 62.3%; }
 
   /* clients section start */
   .clients { padding: 40px 0; }
-  .clients-list { padding: 0 30px; }
   /* clients section start */
 
   /* offers section start */
@@ -1217,4 +1216,43 @@ footer .wrapper { width: 62.3%; }
     font-size: 14px;
   }
   /* footer start */
+}
+/*media query for 640px starts here*/
+@media only screen and (max-width: 640px) {
+  /* header start */
+  header { padding: 14px 0; }
+  .hamburger { top: 6px; }
+  /* header end */
+
+  /* banner section start */
+  .banner { height: 50vh; }
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 54%;
+    text-align: center;
+  }
+
+  .banner-content h2 {
+    width: 100%;
+    font-size: 19px;
+  }
+
+  .banner-content span {
+    padding: 10px 0 15px;
+    font-size: 14px;
+  }
+  /* banner section end */
+
+  /* special section start */
+  .special-content { text-align: center; }
+  .special-description { width: 100%; }
+  .special-content span { padding: 10px 0; }
+  /* special section end */
+
+  /* footer start */
+  .footer-list:not(:first-child) { flex-basis: 23%; }
+  .footer-list:last-child { flex-basis: 40%; }
+  /* footer end */
 }
