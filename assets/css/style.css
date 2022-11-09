@@ -160,24 +160,22 @@ nav {
 .banner {
   max-height: 626px;
   height: 626px;
-  background: url('../images/home-new-bg-free-img.jpeg') no-repeat fixed top -68px center;
+  background: linear-gradient(180deg,rgba(33,103,148,.5),rgba(0,0,0,.5)),url('../images/home-new-bg-free-img.jpeg') no-repeat fixed top -68px center;
   background-size: cover;
   color: rgb(255,255,255);
 }
 
-
 .banner .wrapper {
-  width: 100%;
+  width: 62%;
   height: 100%;
   position: relative;
-  background: linear-gradient(180deg,rgba(33,103,148,.5),rgba(0,0,0,.5));
 }
 
 .banner-content {
-  width: 62%;
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: 19%;
+  left: 0;
   transform: translateY(-50%);
 }
 
@@ -688,7 +686,7 @@ nav {
 .breadcrumb li+li:before { content: "/\00a0"; }
 
 .breadcrumb a ,.breadcrumb li+li:before {
-  color: rgb(0,0,0);
+  color: rgb(137, 130, 130);
   font-size: 10px;
   text-transform: capitalize;
 }
@@ -701,6 +699,7 @@ nav {
 }
 
 .result li { font-size: 11px; }
+.result-dropdown { color: rgb(137, 130, 130); }
 
 .dropdown-list { 
   position: relative;
