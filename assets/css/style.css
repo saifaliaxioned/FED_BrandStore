@@ -270,7 +270,6 @@ nav {
 }
 
 .clients-items {
-  /* width: 100%; */
   display: flex;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -297,11 +296,11 @@ nav {
 .client-btn { text-indent: -9999px; }
 
 .client-btn::before {
-  text-indent: 0;
+  color: rgb(226, 219, 219);
   font-family: "FontAwesome";
   font-size: 13px;
   float: left;
-  color: rgb(226, 219, 219);
+  text-indent: 0;
   transition: all .3s ease;
 }
 
@@ -429,8 +428,8 @@ nav {
 .product-category,.canceled-price { color: rgb(137, 130, 130); }
 
 .rating-list span,.color-list span{
-  text-indent: -9999px;
   display: inline-block;
+  text-indent: -9999px;
 }
 
 
@@ -446,8 +445,8 @@ nav {
 }
 
 .color-list span::before {
-  padding: 10px 0;
   content: '\f111';
+  padding: 10px 0;
   font-size: 13px;
 }
 
@@ -821,31 +820,38 @@ nav {
 
 /* login page start */
 .login-page { overflow-y: hidden; }
+
 .login-page header {
   position: static;
   background: rgb(0,0,0);
 }
+
 .login-page header .wrapper {
   display: flex;
   justify-content: center;
 }
+
 .user-login {
   padding-bottom: 6px;
   background: rgb(189, 183, 183);
 }
+
 .user-login .form-container { height: 85.8vh; }
+
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.user-login form,.dataRegister form{
+
+.user-login form {
   width: 30%;
   min-width: 300px;
   padding: 30px 20px;
   border-radius: 10px;
   background: rgb(255,255,255);
 }
+
 .user-login form { box-shadow: 6px 6px 14px rgb(146, 144, 144); }
 
 .user-login form h2 {
@@ -855,22 +861,27 @@ nav {
   text-align: center;
   text-transform: capitalize;
 }
+
 .login-page .input-group {
   padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
 }
+
 .login-page .input-group label {
   padding-bottom: 7px;
   text-transform: capitalize;
 }
+
 .login-page .input-group input,.login-page .input-control input {
   width: 100%;
   padding: 8px 2%;
   border: 1px solid rgb(189, 183, 183);
   outline: none;
 }
+
 .login-page .input-control { padding: 20px 0; }
+
 .login-page .input-control input {
   padding: 10px;
   border: none;
@@ -880,6 +891,7 @@ nav {
   font-size: 17px;
   transition: all .5s ease;
 }
+
 .login-page .input-control input:hover { background: rgb(146, 144, 144);}
 .input-error { color: rgb(255,0,0); }
 .hide-content { display: none; }
@@ -901,6 +913,7 @@ footer .wrapper { width: 62.3%; }
   text-transform: uppercase;
 }
 /* footer top end */
+
 /* footer middle start */
 .footer-logo { width: 20%; }
 
@@ -969,6 +982,7 @@ footer .wrapper { width: 62.3%; }
   transition: all .3s ease;
 }
 /* footer middle end */
+
 /* footer bottom start */
 .footer-bottom { padding: 22px 0 20px; }
 
@@ -1207,15 +1221,15 @@ footer .wrapper { width: 62.3%; }
 
   /* special section start */
   .special .wrapper {
-    background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url(../images/banner-03.jpeg) no-repeat fixed right 37% center;
+    background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url('../images/banner-03.jpeg') no-repeat fixed right 37% center;
     background-size: cover;
   }
   /* special section end */
 
   /* services section start */
   .service-items {
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .service-list { flex-basis: 46%; }
