@@ -676,7 +676,11 @@ nav {
   transition: all .3s ease;
 }
 
-.price-range { font-size: 10px; }
+.price-range {
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
 .min-price,.max-price { font-weight: 600; }
 /* price form end */
 
