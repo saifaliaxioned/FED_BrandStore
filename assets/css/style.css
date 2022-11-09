@@ -771,8 +771,71 @@ nav {
 
 /* store end */
 /* category main section end */
-
 /* category page end */
+
+/* login page start */
+.login-page { overflow-y: hidden; }
+.login-page header {
+  position: static;
+  background: rgb(0,0,0);
+}
+.login-page header .wrapper {
+  display: flex;
+  justify-content: center;
+}
+.user-login {
+  padding-bottom: 6px;
+  background: rgb(189, 183, 183);
+}
+.user-login .form-container { height: 85.8vh; }
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-login form,.dataRegister form{
+  width: 30%;
+  min-width: 300px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background: rgb(255,255,255);
+}
+.user-login form { box-shadow: 6px 6px 14px rgb(146, 144, 144); }
+form h2 {
+  padding: 10px 0 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.login-page .input-group {
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.login-page .input-group label {
+  padding-bottom: 7px;
+  text-transform: capitalize;
+}
+.login-page .input-group input,.login-page .input-control input {
+  width: 100%;
+  padding: 8px 2%;
+  border: 1px solid rgb(189, 183, 183);
+  outline: none;
+}
+.login-page .input-control { padding: 20px 0; }
+.login-page .input-control input {
+  padding: 10px;
+  border: none;
+  background: rgb(0,0,0);
+  color: rgb(255,255,255);
+  font-weight: bold;
+  font-size: 17px;
+  transition: all .5s ease;
+}
+.login-page .input-control input:hover { background: rgb(146, 144, 144);}
+.input-error { color: rgb(255,0,0); }
+.hide-content { display: none; }
+/* login page end */
 /*=================================
   main styling ends here
 =================================*/
