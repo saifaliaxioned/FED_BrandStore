@@ -1161,7 +1161,7 @@ footer .wrapper { width: 62.3%; }
     transition: all .5s ease;
   }
 
-  .hamburger:hover + nav {
+  .active-hamburger + nav {
     left: 0;
     animation: fadeIn .8s ease;
   }
