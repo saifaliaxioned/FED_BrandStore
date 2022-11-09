@@ -146,8 +146,11 @@ nav {
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
-  color:  rgba(255,255,255,.7);
+  color:  rgba(255,255,255,.9);
+  transition: all .3s ease;
 }
+
+.active-nav a{ color: rgb(47,132,214); }
 /* header end */
 /*=================================
   Header styling ends here
@@ -159,8 +162,8 @@ nav {
 /* banner section start */
 .banner {
   max-height: 626px;
-  height: 626px;
-  background: linear-gradient(180deg,rgba(33,103,148,.5),rgba(0,0,0,.5)),url('../images/home-new-bg-free-img.jpeg') no-repeat fixed top -68px center;
+  height: 94vh;
+  background: linear-gradient(180deg,rgba(33,103,148,.5),rgba(0,0,0,.5)),url('../images/home-new-bg-free-img.jpeg') no-repeat fixed top 75% center;
   background-size: cover;
   color: rgb(255,255,255);
 }
@@ -257,6 +260,7 @@ nav {
   font-size: 13px;
   float: left;
   color: rgb(226, 219, 219);
+  transition: all .3s ease;
 }
 
 .prev::before { content: '\f053'; }
@@ -499,6 +503,7 @@ nav {
 .category-page .nav-list a,.category-page .logout-btn a { 
   color: rgb(0,0,0);
   font-weight: normal;
+  transition: all .3s ease;
 }
 /* category header end */
 
@@ -543,6 +548,7 @@ nav {
   border: none;
   background: rgb(47,132,214);
   text-indent: -9999px;
+  transition: all .3s ease;
 }
 
 .search-form span::before {
@@ -623,8 +629,9 @@ nav {
   outline: none;
   background: rgb(47,132,214);
   color: rgb(255,255,255);
-  text-transform: uppercase;
   font-size: 9px;
+  text-transform: uppercase;
+  transition: all .3s ease;
 }
 
 .price-range { font-size: 10px; }
@@ -655,7 +662,10 @@ nav {
 .category-list a {
   color: rgb(0,0,0);
   text-transform: capitalize;
+  transition: all .3s ease;
 }
+
+.active-category a { color: rgb(47,132,214); }
 /* categories part end */
 
 /* sellers part start */
@@ -795,7 +805,6 @@ footer .wrapper { width: 62.3%; }
 }
 
 .footer-list:not(:first-child) { flex-basis: 19%; }
-
 .footer-list:last-child { flex-basis: 24%; }
 
 .footer-list h5 {
@@ -846,6 +855,7 @@ footer .wrapper { width: 62.3%; }
   color: rgb(255,255,255);
   font-size: 11px;
   text-transform: uppercase;
+  transition: all .3s ease;
 }
 /* footer middle end */
 /* footer bottom start */
@@ -874,6 +884,7 @@ footer .wrapper { width: 62.3%; }
   font-size: 12px;
   float: left;
   text-indent: 0;
+  transition: all .3s ease;
 }
 
 .facebook::before { content: '\f39e'; }
@@ -900,13 +911,49 @@ footer .wrapper { width: 62.3%; }
 /* footer bottom end */
 /* category page footer end */
 
-
-
-
-
  /*=================================
   footer styling ends here
 =================================*/ 
+
+/* for hover effects */
+@media only screen and (min-width: 995px) {
+  /* header start */
+  .nav-list a:hover { color: rgb(99, 177, 251); }
+  .category-page .nav-list a:hover { color: rgb(47,132,214); }
+  .logout-btn a:hover { color: rgb(255,0,0); }
+  /* header end */
+  /* banner section start */
+  .white-btn:hover {
+    background: rgb(27,95,127);
+    color: rgb(255,255,255);
+  }
+  .find-more:hover {
+    background: rgb(255,255,255);
+    color: rgb(27,95,127);
+  }
+  /* banner section end */
+  /* clients section start */
+  .client-btn:hover::before { color: rgb(0,0,0); }
+  /* clients section end */
+  /* footer start */
+  .footer-list a:hover {
+    color: rgb(47,132,214);
+    text-decoration: underline;
+  }
+
+  .footer-list .input-control input:hover,.filter-btn input:hover,.search-form .input-control input:hover { background: rgb(27,95,127); }
+  .facebook:hover::before{  color: rgb(0, 140, 255); }
+  .yotube:hover::before{ color: rgb(255, 0, 0); }
+  .google:hover::before{ color: rgb(32, 202, 72); }
+  .twitter:hover::before{ color: rgb(0, 200, 255); }
+  .instagram:hover::before{ color: rgb(245, 12, 245); }
+  .yelp:hover::before{ color: rgb(255, 0, 0); }
+  /* footer end */
+
+  /* category page start */
+  .category-list a:hover { color: rgb(47,132,214); }
+  /* category page start */
+}
 
 /*media query starts*/
 /*media query for 995px starts here*/
