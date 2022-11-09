@@ -1285,7 +1285,7 @@ footer .wrapper { width: 62.3%; }
   /* header start */
   .category-page .hamburger { top: 5px; }
   /* header end */
-  
+
   .main-content { flex-direction: column; }
   .side-bar { order: 2; }
   .store-container { order: 1; }
@@ -1355,6 +1355,14 @@ footer .wrapper { width: 62.3%; }
     gap: 8px;
   }
   /* footer end */
+
+  /* category page start */
+  /* sellers part start */
+  .seller-list { flex-basis: 100%; }
+  .seller-list .product-image { flex-basis: 15%; }
+  .seller-list .product-details h3 { font-size: 12px; }
+  /* sellers part end */
+  /* category page end */
 }
 /*media query for 375px starts here*/
 @media only screen and (max-width: 375px) {
