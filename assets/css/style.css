@@ -956,9 +956,15 @@ footer .wrapper { width: 62.3%; }
 }
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
+/*media query for 1280px starts here*/
+@media only screen and (max-width: 1280px) {
+  /* wrapper start */
+  .offers .wrapper,.products .wrapper,.special .wrapper,.services .wrapper,footer .wrapper { width: 80%; }
+  /* wrapper end */
+  /* banner section start */
+  .banner-content h2 {
+    width: 59%;
+    font-size: 40px;
+  }
+  /* banner section end */
 }  
