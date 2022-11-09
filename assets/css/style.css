@@ -173,6 +173,8 @@ nav {
   transform: translate(-50%,-50%);
 }
 
+.category-page .bar { background-color: rgb(146, 144, 144); }
+
 .bar::before,
 .bar::after {
   content: "";
@@ -1155,7 +1157,7 @@ footer .wrapper { width: 62.3%; }
     transition: all .5s ease;
   }
 
-  .active-hamburger + nav {
+  .hamburger:hover + nav {
     left: 0;
     animation: fadeIn .8s ease;
   }
@@ -1175,6 +1177,7 @@ footer .wrapper { width: 62.3%; }
   }
 
   .nav-list a { font-size: 23px; }
+  .category-page .nav-list a { color: rgb(255,255,255); }
   /* header end */
 
   /* banner section start */
@@ -1226,6 +1229,7 @@ footer .wrapper { width: 62.3%; }
 
   /* banner section start */
   .banner { height: 50vh; }
+
   .banner-content {
     display: flex;
     flex-direction: column;
@@ -1254,5 +1258,53 @@ footer .wrapper { width: 62.3%; }
   /* footer start */
   .footer-list:not(:first-child) { flex-basis: 23%; }
   .footer-list:last-child { flex-basis: 40%; }
+  /* footer end */
+}
+/*media query for 480px starts here*/
+@media only screen and (max-width: 480px) {
+  /* offers section start */
+  .offer-list { flex: 0 0 75%; }
+  .offer-list h3 { font-size: 20px; }
+
+  .offer-content p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  /* offers section end */
+
+  /* porducts section start */
+  .sectin-heading { font-size: 24px; }
+  /* porducts section end */
+
+  /* services section start */
+  .services { padding: 26px 0; }
+  .service-list { flex-basis: 77%; }
+  .service-list p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  /* services section end */
+
+  /* footer start */
+  .footer-top { text-align: center; }
+  .footer-logo { margin: 0 auto; }
+  .footer-list h6 { padding-bottom: 9px; }
+  .footer-bottom { padding: 14px 0; }
+
+  .footer-items .footer-list {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .footer-list:last-child { 
+    margin: 0 auto;
+    flex-basis: 80%;
+  }
+
+  .footer-bottom .wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
   /* footer end */
 }
