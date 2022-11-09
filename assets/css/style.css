@@ -1167,7 +1167,7 @@ footer .wrapper { width: 62.3%; }
   }
 
   @keyframes fadeIn {
-    0% { opacity: 0; background-color: none; }
+    0% { opacity: 0; background: none; }
     100% { opacity: 1; background-color: rgb(0,0,0); }
   }
   
