@@ -126,7 +126,6 @@ header {
 
 .header-content { padding: 0 2%; }
 .header-content,nav,.logout-btn { display: flex; }
-.hamburger { display: none; }
 .logo { flex-basis: 7.5%; }
 nav,.logout-btn { align-items: center; }
 .logout-btn { padding-top: 3px; }
@@ -150,6 +149,47 @@ nav {
   transition: all .3s ease;
 }
 
+/* hamburger start */
+.hamburger {
+  width: 41px;
+  height: 35px;
+  border-radius: 2px;
+  display: none; 
+  position: relative;
+  cursor: pointer;
+}
+
+.bar {
+  width: 50%;
+  height: 3px;
+  border-radius: 4px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(255,255,255);
+  text-indent: -99999px;
+  transition: all 0.3s ease;
+  transform: translate(-50%,-50%);
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+  transition: all .3s ease;
+}
+
+.bar::before { top: -6px; }
+.bar::after { top: 6px; }
+.active-hamburger .bar { transform: translate(-50%,-50%) rotate(45deg); }
+.active-hamburger .bar::before {  transform: translateY(6px) rotate(0); }
+.active-hamburger .bar::after { transform: translateY(-6px) rotate(-90deg); }
+/* hamburger end */
 .active-nav a{ color: rgb(47,132,214); }
 /* header end */
 /*=================================
@@ -801,11 +841,13 @@ nav {
   background: rgb(255,255,255);
 }
 .user-login form { box-shadow: 6px 6px 14px rgb(146, 144, 144); }
-form h2 {
+
+.user-login form h2 {
   padding: 10px 0 20px 0;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  text-transform: capitalize;
 }
 .login-page .input-group {
   padding: 0 0 20px 0;
@@ -1042,19 +1084,31 @@ footer .wrapper { width: 62.3%; }
   /* wrapper start */
   .offers .wrapper,.products .wrapper,.special .wrapper,.services .wrapper,footer .wrapper { width: 90%; }
   /* wrapper end */
-  .banner-content h2 { font-size: 32px; }
 
+  /* banner section start */
+  .banner-content h2 { font-size: 32px; }
+  /* banner section start */
+
+  /* clients section start */
   .clients { padding: 40px 0; }
   .clients-list { padding: 0 30px; }
+  /* clients section start */
 
+  /* offers section start */
   .offers { padding-bottom: 45px; }
+  /* offers section end */
 
+  /* product section start */
   .products { padding: 18px 0; }
   .product-items { justify-content: center; }
   .product-list { flex: 0 0 23%; }
+  /* product section end */
 
+  /* services section start */
   .services { padding: 60px 0; }
+  /* services section start */
 
+  /* footer start */
   .footer-logo { width: 15%; }
   .footer-list h5 { padding: 16px 0; }
   .footer-middle { padding: 28px 0; }
@@ -1062,4 +1116,105 @@ footer .wrapper { width: 62.3%; }
   .footer-list:first-child { flex-basis: 100%; }
   .footer-list:not(:first-child) { flex-basis: 20%; }
   .footer-list:last-child { flex-basis: 40%; }
+  /* footer end */
+}
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  /* wrapper start */
+  .offers .wrapper,.products .wrapper,.special .wrapper,.services .wrapper,footer .wrapper { width: 96%; }
+  /* wrapper end */
+  /* header start */
+  .logo { flex-basis: 10.5%; }
+  .header-content { justify-content: space-between; }
+
+  .logout-btn { 
+    padding-top: 0;
+    margin-right: 10%
+  }
+
+  .hamburger {
+    padding: 5px;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 11px;
+    right: 2%;
+  }
+
+  nav {
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    margin: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -100%;
+    flex-direction: column;
+    justify-content: stretch;
+    background-color: rgb(0,0,0);
+    transition: all .5s ease;
+  }
+
+  .active-hamburger + nav {
+    left: 0;
+    animation: fadeIn .8s ease;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; background-color: none; }
+    100% { opacity: 1; background-color: rgb(0,0,0); }
+  }
+  
+  .left-menu,.right-menu {
+    width: inherit;
+    padding-top: 36px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .nav-list a { font-size: 23px; }
+  /* header end */
+
+  /* banner section start */
+  .banner-content h2 { width: 75%; }
+  /* banner section end */
+
+  /* offers section start */
+  .offer-items {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .offer-list { flex:1 0 45%; }
+  /* offers section end */
+
+  /* products section start */
+  .product-list { flex: 0 0 46%; }
+  /* products section end */
+
+  /* special section start */
+  .special .wrapper {
+    background: linear-gradient(90deg,rgb(62,127,181,.8),rgba(0,0,0,0)),url(../images/banner-03.jpeg) no-repeat fixed right 37% center;
+    background-size: cover;
+  }
+  /* special section end */
+
+  /* services section start */
+  .service-items {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service-list { flex-basis: 46%; }
+  /* services section end */
+
+  /* footer start */
+  .footer-top {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  /* footer start */
 }
