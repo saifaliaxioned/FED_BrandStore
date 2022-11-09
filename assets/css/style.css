@@ -885,6 +885,21 @@ footer .wrapper { width: 62.3%; }
 .yelp::before { content: '\f1e9'; }
 /* footer bottom end */
 
+/* category page footer start */
+/* footer middle start */
+.category-page .footer-middle { padding: 55px 0 68px; }
+
+.category-page .footer-list h6 {
+  padding-bottom: 15px;
+  font-size: 13px; 
+  font-weight: normal;
+}
+/* footer middle end */
+
+/* footer bottom start */
+.footer-bottom { padding: 24px 0 15px; }
+/* footer bottom end */
+/* category page footer end */
 
 
 
