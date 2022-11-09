@@ -1279,6 +1279,7 @@ footer .wrapper { width: 62.3%; }
   /* services section start */
   .services { padding: 26px 0; }
   .service-list { flex-basis: 77%; }
+
   .service-list p {
     font-size: 12px;
     line-height: 1.4;
@@ -1306,5 +1307,23 @@ footer .wrapper { width: 62.3%; }
     align-items: center;
     gap: 8px;
   }
+  /* footer end */
+}
+/*media query for 375px starts here*/
+@media only screen and (max-width: 375px) {
+  .white-btn, .find-more { font-size: 8px; } 
+
+  /* header start */
+  .nav-list a { font-size: 18px; }
+  .logo { flex-basis: 19.5%; }
+  .logout-btn { margin-right: 15%; }
+  /* header end */
+
+  /* offers section start */
+  .offer-list { flex: 0 0 97%; }
+  /* offers section end */
+
+  /* footer start */
+  .footer-logo { width: 22%; }
   /* footer end */
 }
