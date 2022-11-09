@@ -968,3 +968,35 @@ footer .wrapper { width: 62.3%; }
   }
   /* banner section end */
 }  
+/*media query for 1024px starts here*/
+@media only screen and (max-width: 1024px) { 
+  /* banner section start */
+  .banner { height: 80vh; }
+  /* banner section end */
+}
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+  /* wrapper start */
+  .offers .wrapper,.products .wrapper,.special .wrapper,.services .wrapper,footer .wrapper { width: 90%; }
+  /* wrapper end */
+  .banner-content h2 { font-size: 32px; }
+
+  .clients { padding: 40px 0; }
+  .clients-list { padding: 0 30px; }
+
+  .offers { padding-bottom: 45px; }
+
+  .products { padding: 18px 0; }
+  .product-items { justify-content: center; }
+  .product-list { flex: 0 0 23%; }
+
+  .services { padding: 60px 0; }
+
+  .footer-logo { width: 15%; }
+  .footer-list h5 { padding: 16px 0; }
+  .footer-middle { padding: 28px 0; }
+  .footer-items { flex-wrap: wrap; }
+  .footer-list:first-child { flex-basis: 100%; }
+  .footer-list:not(:first-child) { flex-basis: 20%; }
+  .footer-list:last-child { flex-basis: 40%; }
+}
