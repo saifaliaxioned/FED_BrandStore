@@ -1280,6 +1280,32 @@ footer .wrapper { width: 62.3%; }
   .footer-list:not(:first-child) { flex-basis: 23%; }
   .footer-list:last-child { flex-basis: 40%; }
   /* footer end */
+
+  /* category page start */
+  /* header start */
+  .category-page .hamburger { top: 5px; }
+  /* header end */
+  
+  .main-content { flex-direction: column; }
+  .side-bar { order: 2; }
+  .store-container { order: 1; }
+  .search-form,.price-form { width: 50%; }
+
+  /* sellers part start */
+  .seller-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .seller-list { flex-basis: 45%; }
+  /* sellers part end */
+
+  /* pagination start */
+  .pagination-items { justify-content: center; }
+  /* pagination end */
+
+  /* category page end */
 }
 /*media query for 480px starts here*/
 @media only screen and (max-width: 480px) {
