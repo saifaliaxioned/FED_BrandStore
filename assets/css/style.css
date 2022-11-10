@@ -262,7 +262,7 @@ nav {
 /* banner section end */
 
 /* clients section start */
-.clients { padding: 60px 0; }
+.clients { padding: 60px 0 40px; }
 
 .clients .wrapper {
   width: 60%;
@@ -282,15 +282,14 @@ nav {
 
 .clients-list { padding: 0 37px; }
 
-.client-controls {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.prev,.next {
   position: absolute;
-  top: 70%;
-  left: 0;
+  top: 30%;
   transform: translateY(-50%);
 }
+
+.prev { left: 0; }
+.next { right: 0; }
 
 .clients-image { width: 90px; }
 .client-btn { text-indent: -9999px; }
@@ -309,7 +308,7 @@ nav {
 /* clients section end */
 
 /* offers section start */
-.offers { padding-bottom: 82px; }
+.offers { padding-bottom: 85px; }
 .offers .wrapper { width: 60.2%; }
 
 .offer-items {
