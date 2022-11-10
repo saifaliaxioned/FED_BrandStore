@@ -273,6 +273,7 @@ nav {
 .clients-items {
   display: flex;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
