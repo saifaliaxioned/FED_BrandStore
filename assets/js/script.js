@@ -3,7 +3,7 @@ var hamburger = document.querySelector('.hamburger'),
   navList = document.querySelectorAll('.nav-list'),
   categoryList = document.querySelectorAll('.category-list a'),
   productList = document.querySelectorAll('.product-list'),
-  loginForm = document.querySelector('form[name=login-form'),
+  loginForm = document.querySelector('.login-form'),
   logoutBtn = document.querySelector('.logout-btn'),
   priceForm = document.querySelector('.price-form');
 
@@ -50,7 +50,7 @@ function validateInput(form) {
   return valid;
 }
 // error function
-function validateError(inputDiv,valid,message) {
+function validateError(inputDiv, valid, message) {
   var valid;
   if (inputDiv.children[2]) {
     inputDiv.children[2].remove();
@@ -68,13 +68,13 @@ function validateError(inputDiv,valid,message) {
 }
 
 if (loginForm) {
-  loginForm.addEventListener('submit',function (e) {
+  loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var valid = validateInput(this),
-    username = loginForm.children[1].children[1].value,
-    password = loginForm.children[2].children[1].value;
+      username = loginForm.children[1].children[1].value,
+      password = loginForm.children[2].children[1].value;
     if (valid) {
-      createStorage(username,password);
+      createStorage(username, password);
       location.href = 'home.html';
     }
   })
@@ -86,9 +86,35 @@ document.onload = checkStorage();
 
 // logout function
 if (logoutBtn) {
-  logoutBtn.addEventListener('click',clearStorage);
+  logoutBtn.addEventListener('click', clearStorage);
 }
 
+// category page function start
+// filter function
+function sortProduct(li, products) {
+  var key = document.URL.split('?');
+  li.forEach(function (contentList) {
+    if (contentList.dataset.list == key[1]) {
+      contentList.classList.add('active-list');
+    }
+  })
+  products.forEach(function (product) {
+    var productCategory = product.dataset.category;
+    if (key[1] === 'everything') {
+      product.classList.remove('hide-content');
+    } else if (key[1] !== productCategory) {
+      product.classList.add('hide-content');
+    } else {
+      product.classList.remove('hide-content');
+    }
+  })
+}
+
+if (priceForm) {
+  sortProduct(navList, productList);
+  sortProduct(categoryList,productList);
+}
+// category page function end
 
 
 
