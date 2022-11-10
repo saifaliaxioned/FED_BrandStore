@@ -112,10 +112,84 @@ function sortProduct(li, products) {
 
 if (priceForm) {
   sortProduct(navList, productList);
-  sortProduct(categoryList,productList);
+  sortProduct(categoryList, productList);
 }
 // category page function end
 
+// modal function
+if (header) {
+  var productFigure = document.querySelectorAll('.product-image'),
+    productImage = document.querySelectorAll('.product-image img');
+  // Image function
+  productImage.forEach(function (image, i) {
+    var imageSource = image.src;
+    image.index = i;
+    image.addEventListener('click', function () {
+      imageModal = document.createElement('div'),
+        imageModal.classList.add('modalDiv');
+      imageModal.innerHTML = `<div class="modal-content">
+      <div class="cancel-btn">
+          <span>cancel</span>
+        </div>
+        <figure class="modal-img">
+          <img src="${imageSource}" alt="Modal Image">
+        </figure>
+        <div class="slide-controls">
+          <div class="prevBtn">
+            <span>prev</span>
+          </div>
+          <div class="nextBtn">
+            <span>next</span>
+          </div>
+        </div>
+      </div>`;
+      document.body.appendChild(imageModal);
+
+      var modal = document.querySelector('.modalDiv'),
+        modalImage = document.querySelector('.modalDiv img'),
+        prevBtn = document.querySelector('.prevBtn span'),
+        nextBtn = document.querySelector('.nextBtn span'),
+        currentIndex;
+      currentIndex = image.index;
+      // Modal function
+      if (modal) {
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal || e.target === modal.children[0].children[0].children[0]) {
+            modal.remove();
+            document.documentElement.classList.remove('remove-scroll');
+          };
+        });
+        // slider function
+        nextBtn.addEventListener('click', function () {
+          currentIndex++;
+          if (currentIndex > productFigure.length - 1) {
+            currentIndex = 0;
+          }
+          slider();
+        });
+        prevBtn.addEventListener('click', function () {
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = productFigure.length - 1;
+          }
+          slider();
+        });
+        function slider() {
+          modalImage.src = productImage[currentIndex].src;
+        }
+        // Escape key function
+        document.addEventListener('keydown', function (e) {
+          if (e.key === "Escape") {
+            modal.remove();
+            document.documentElement.classList.remove('remove-scroll');
+          };
+        });
+      }
+      document.documentElement.classList.add('remove-scroll');
+    });
+  });
+ 
+}
 
 
 
