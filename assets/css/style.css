@@ -797,6 +797,11 @@ nav {
   font-size: 10px;
 }
 
+.active-pagination {
+  background: rgb(0,0,0);
+  color: rgb(255,255,255);
+}
+
 .pagination-list .next-icon {
   padding: 10px 10px 6px;
   text-indent: -9999px;
