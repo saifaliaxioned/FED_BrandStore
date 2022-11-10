@@ -191,6 +191,7 @@ nav {
 .active-hamburger .bar { transform: translate(-50%,-50%) rotate(45deg); }
 .active-hamburger .bar::before {  transform: translateY(6px) rotate(0); }
 .active-hamburger .bar::after { transform: translateY(-6px) rotate(-90deg); }
+.remove-scroll { overflow-y: hidden; }
 /* hamburger end */
 /* header end */
 /*=================================
