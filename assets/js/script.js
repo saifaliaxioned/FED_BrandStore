@@ -2,6 +2,7 @@ var hamburger = document.querySelector('.hamburger'),
   header = document.querySelector('.header-content'),
   navList = document.querySelectorAll('.nav-list'),
   categoryList = document.querySelectorAll('.category-list a'),
+  clientItems = document.querySelector('.clients-items'),
   productList = document.querySelectorAll('.product-list'),
   loginForm = document.querySelector('.login-form'),
   logoutBtn = document.querySelector('.logout-btn'),
@@ -94,7 +95,7 @@ if (logoutBtn) {
 function sortProduct(li, products) {
   var key = document.URL.split('?');
   li.forEach(function (contentList) {
-    if (contentList.dataset.list == key[1]) {
+    if (contentList.dataset.list === key[1]) {
       contentList.classList.add('active-list');
     }
   })
@@ -188,9 +189,60 @@ if (header) {
       document.documentElement.classList.add('remove-scroll');
     });
   });
- 
 }
 
+// logo slider function
+if (clientItems) {
+  var containerDimension = clientItems.getBoundingClientRect(),
+    clientList = document.querySelectorAll('.clients-list'),
+    containerWidth = containerDimension.width,
+    logoPrev = document.querySelector('.prev'),
+    logoNext = document.querySelector('.next'),
+    interval = setInterval(autoPlay, 3000);
+  // autoplay slider function
+  function autoPlay() {
+    clientItems.scrollLeft += containerWidth;
+    var listLength = clientList.length - 1;
+    var lists = clientList[listLength].getBoundingClientRect().right,
+      clientItemsWidth = clientItems.clientWidth,
+      widthAdd = clientItems.getBoundingClientRect().left + clientItemsWidth;
+    if (widthAdd == lists) {
+      clientItems.scrollBy(-(listLength * clientList[0].clientWidth), 0);
+    }
+  }
+  // slider function for all breakpoints
+  function logoSlider(screenOne,screenTwo,screenThree,screenFour,screenFive,screenSix,screenSeven) {
+    if (window.innerWidth >= 1245) {
+      clientItems.scrollBy(screenSeven,0);
+    } else if ((window.innerWidth < 1245) && (window.innerWidth >= 1012)) {
+      clientItems.scrollBy(screenSix,0);
+    } else if ((window.innerWidth < 1012) && (window.innerWidth >= 844)) {
+      clientItems.scrollBy(screenFive,0);
+    } else if ((window.innerWidth < 844) && (window.innerWidth >= 676)) {
+      clientItems.scrollBy(screenFour,0);
+    } else if ((window.innerWidth < 676) && (window.innerWidth >= 510)) {
+      clientItems.scrollBy(screenThree,0);
+    } else if ((window.innerWidth < 510) && (window.innerWidth >= 340)) {
+      clientItems.scrollBy(screenTwo,0);
+    } else if (window.innerWidth < 340) {
+      clientItems.scrollBy(screenOne,0);
+    }
+  }
+  // previous logo button function
+  logoPrev.addEventListener('click', function (e) {
+    e.preventDefault();
+    logoSlider(-160, -320, -320, -440, -800, -960, -1120);
+    clearInterval(interval);
+    interval = setInterval(autoPlay, 3000);
+  });
+  // Next logo button function
+  logoNext.addEventListener('click', function (e) {
+    e.preventDefault();
+    logoSlider(+160, +320, +320, +440, +800, +960, +1120);
+    clearInterval(interval);
+    interval = setInterval(autoPlay, 3000);
+  });
+}
 
 
 
