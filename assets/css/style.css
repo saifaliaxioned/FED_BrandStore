@@ -192,7 +192,6 @@ nav {
 .active-hamburger .bar::before {  transform: translateY(6px) rotate(0); }
 .active-hamburger .bar::after { transform: translateY(-6px) rotate(-90deg); }
 /* hamburger end */
-.active-nav a{ color: rgb(47,132,214); }
 /* header end */
 /*=================================
   Header styling ends here
@@ -545,6 +544,8 @@ nav {
   font-weight: normal;
   transition: all .3s ease;
 }
+
+.category-page .active-list a{ color: rgb(47,132,214); }
 /* category header end */
 
 /* category main section start */
