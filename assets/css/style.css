@@ -864,9 +864,10 @@ nav {
 }
 
 .login-page .input-group {
-  padding: 0 0 20px 0;
+  padding: 0 0 25px 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .login-page .input-group label {
@@ -894,7 +895,14 @@ nav {
 }
 
 .login-page .input-control input:hover { background: rgb(146, 144, 144);}
-.input-error { color: rgb(255,0,0); }
+
+.input-error {
+  position: absolute;
+  bottom: 16%;
+  color: rgb(255,0,0);
+  font-size: 11px;
+}
+
 .hide-content { display: none; }
 /* login page end */
 /*=================================
