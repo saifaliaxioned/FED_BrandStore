@@ -114,7 +114,100 @@ function sortProduct(li, products) {
 if (priceForm) {
   sortProduct(navList, productList);
   sortProduct(categoryList, productList);
+  // price range
+  var thumbsize = 14;
+  function draw(slider, splitvalue) {
+    /* set function vars */
+    var min = slider.querySelector('.min'),
+      max = slider.querySelector('.max'),
+      lower = slider.querySelector('.min-price'),
+      upper = slider.querySelector('.max-price'),
+      thumbsize = parseInt(slider.getAttribute('data-thumbsize')),
+      rangewidth = parseInt(slider.getAttribute('data-rangewidth')),
+      rangemin = parseInt(slider.getAttribute('data-rangemin')),
+      rangemax = parseInt(slider.getAttribute('data-rangemax'));
+    /* set min and max attributes */
+    min.setAttribute('max', splitvalue);
+    max.setAttribute('min', splitvalue);
+    /* set css */
+    min.style.width = parseInt(thumbsize + ((splitvalue - rangemin) / (rangemax - rangemin)) * (rangewidth - (2 * thumbsize))) + 'px';
+    max.style.width = parseInt(thumbsize + ((rangemax - splitvalue) / (rangemax - rangemin)) * (rangewidth - (2 * thumbsize))) + 'px';
+    min.style.left = '0px';
+    max.style.left = parseInt(min.style.width) + 'px';
+    /* correct for 1 off at the end */
+    if (max.value > (rangemax - 1)) max.setAttribute('data-value', rangemax);
+    /* write value of min and max price */
+    max.value = max.getAttribute('data-value');
+    min.value = min.getAttribute('data-value');
+    lower.innerText = min.getAttribute('data-value');
+    upper.innerText = max.getAttribute('data-value');
+  }
+  /* set function vars */
+  var min = priceForm.querySelector('.min'),
+    max = priceForm.querySelector('.max'),
+    rangemin = parseInt(min.getAttribute('min')),
+    rangemax = parseInt(max.getAttribute('max')),
+    avgvalue = (rangemin + rangemax) / 2,
+    legendnum = priceForm.getAttribute('data-legendnum');
+  /* set data-values */
+  min.setAttribute('data-value', rangemin);
+  max.setAttribute('data-value', rangemax);
+  /* set data vars */
+  priceForm.setAttribute('data-rangemin', rangemin);
+  priceForm.setAttribute('data-rangemax', rangemax);
+  priceForm.setAttribute('data-thumbsize', thumbsize);
+  priceForm.setAttribute('data-rangewidth', priceForm.offsetWidth);
+  /* dynamic price */
+  var lower = priceForm.querySelector('.min-price');
+  var upper = priceForm.querySelector('.max-price');
+  lower.classList.add('lower', 'value');
+  upper.classList.add('upper', 'value');
+  lower.innerText = rangemin;
+  upper.innerText = rangemax;
+  draw(priceForm, avgvalue);
+  /* events */
+  min.addEventListener("input", function () { update(min); });
+  max.addEventListener("input", function () { update(max); });
+  function update(el) {
+    /* set function vars */
+    var slider = el.parentElement.parentElement,
+      min = slider.querySelector('.min'),
+      max = slider.querySelector('.max'),
+      minvalue = Math.floor(min.value),
+      maxvalue = Math.floor(max.value);
+    /* set inactive values before draw */
+    min.setAttribute('data-value', minvalue);
+    max.setAttribute('data-value', maxvalue);
+    var avgvalue = (minvalue + maxvalue) / 2;
+    /* draw */
+    draw(slider, avgvalue);
+  }
+  // filter price submit function
+  priceForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var minPrice = Number(priceForm.querySelector('.min').value),
+      maxPrice = Number(priceForm.querySelector('.max').value),
+      activeList = document.querySelector('.active-list');
+    // console.log(minPrice);
+    // console.log(maxPrice);
+    productList.forEach(function (product) {
+      var productMin = Number(product.dataset.min),
+        productMax = Number(product.dataset.max);
+        console.log(productMin);
+        console.log(productMax);
+      if ((minPrice < productMin || maxPrice > productMax) && (product.dataset.category == activeList.dataset.list)) {
+        product.classList.remove('hide-content');
+      } else {
+        product.classList.add('hide-content');
+      }
+    })
+  })
 }
+
+
+
+
+
 // category page function end
 
 // modal function
@@ -211,21 +304,21 @@ if (clientItems) {
     }
   }
   // slider function for all breakpoints
-  function logoSlider(screenOne,screenTwo,screenThree,screenFour,screenFive,screenSix,screenSeven) {
+  function logoSlider(screenOne, screenTwo, screenThree, screenFour, screenFive, screenSix, screenSeven) {
     if (window.innerWidth >= 1245) {
-      clientItems.scrollBy(screenSeven,0);
+      clientItems.scrollBy(screenSeven, 0);
     } else if ((window.innerWidth < 1245) && (window.innerWidth >= 1012)) {
-      clientItems.scrollBy(screenSix,0);
+      clientItems.scrollBy(screenSix, 0);
     } else if ((window.innerWidth < 1012) && (window.innerWidth >= 844)) {
-      clientItems.scrollBy(screenFive,0);
+      clientItems.scrollBy(screenFive, 0);
     } else if ((window.innerWidth < 844) && (window.innerWidth >= 676)) {
-      clientItems.scrollBy(screenFour,0);
+      clientItems.scrollBy(screenFour, 0);
     } else if ((window.innerWidth < 676) && (window.innerWidth >= 510)) {
-      clientItems.scrollBy(screenThree,0);
+      clientItems.scrollBy(screenThree, 0);
     } else if ((window.innerWidth < 510) && (window.innerWidth >= 340)) {
-      clientItems.scrollBy(screenTwo,0);
+      clientItems.scrollBy(screenTwo, 0);
     } else if (window.innerWidth < 340) {
-      clientItems.scrollBy(screenOne,0);
+      clientItems.scrollBy(screenOne, 0);
     }
   }
   // previous logo button function
@@ -238,7 +331,7 @@ if (clientItems) {
   // Next logo button function
   logoNext.addEventListener('click', function (e) {
     e.preventDefault();
-    logoSlider(+160, +320, +320, +440, +800, +960, +1120);
+    logoSlider(160, 320, 320, 440, 800, 960, 1120);
     clearInterval(interval);
     interval = setInterval(autoPlay, 3000);
   });
