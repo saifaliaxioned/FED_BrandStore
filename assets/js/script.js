@@ -194,7 +194,7 @@ if (priceForm) {
     productList.forEach(function (product) {
       var productMin = Number(product.dataset.min),
         productMax = Number(product.dataset.max);
-      if ((((productMin >= minPrice) && (productMin <= maxPrice)) || ((productMax >= minPrice) && (productMax <= maxPrice))) && (product.dataset.category == activeList.dataset.list)) {
+      if ((((productMin >= minPrice) && (productMin <= maxPrice)) || ((productMax >= minPrice) && (productMax <= maxPrice))) && ((product.dataset.category == activeList.dataset.list) || (activeList.dataset.list == 'everything'))) {
         product.classList.remove('hide-content');
       } else {
         product.classList.add('hide-content');
