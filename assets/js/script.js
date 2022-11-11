@@ -21,7 +21,7 @@ if (hamburger) {
 function checkStorage() {
   var storage = localStorage.getItem('user');
   if (storage && !header) {
-    location.href = 'home.html';
+    location.href = 'index.html';
   } else if (!storage && !loginForm) {
     location.href = 'login.html';
   }
@@ -79,7 +79,7 @@ if (loginForm) {
       password = loginForm.children[2].children[1].value;
     if (valid) {
       createStorage(username, password);
-      location.href = 'home.html';
+      location.href = 'index.html';
     }
   })
 }
