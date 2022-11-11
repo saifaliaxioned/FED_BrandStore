@@ -1214,7 +1214,7 @@ footer .wrapper { width: 62.3%; }
   /* product section start */
   .products { padding: 18px 0; }
   .product-items { justify-content: center; }
-  .product-list { flex: 0 0 23%; }
+  .home-page .product-list { flex: 0 0 23%; }
   /* product section end */
 
   /* services section start */
@@ -1310,7 +1310,7 @@ footer .wrapper { width: 62.3%; }
   /* offers section end */
 
   /* products section start */
-  .product-list { flex: 0 0 46%; }
+  .home-page .product-list { flex: 0 0 46%; }
   /* products section end */
 
   /* special section start */
