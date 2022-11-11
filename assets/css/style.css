@@ -1072,7 +1072,6 @@ footer .wrapper { width: 62.3%; }
 
 .cancel-btn span {
   display: inline-block;
-  color: rgb(0,0,0);
   text-indent: -9999px;
 }
 
@@ -1081,6 +1080,7 @@ footer .wrapper { width: 62.3%; }
   position: absolute;
   top: 4px;
   right: 10px;
+  color: rgb(0,0,0);
   font-family: 'FontAwesome';
   font-size: 25px;
   cursor: pointer;
@@ -1090,7 +1090,6 @@ footer .wrapper { width: 62.3%; }
 .prevBtn span,.nextBtn span {
   display: inline-block;
   text-indent: -9999px;
-  color: rgb(255,255,255);
 }
 
 .prevBtn span::before,.nextBtn span::before {
@@ -1099,6 +1098,8 @@ footer .wrapper { width: 62.3%; }
   top: 50%;
   transform: translateY(-50%);
   border: 2px solid rgb(255,255,255);
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
   font-size: 15px;
   font-family: 'FontAwesome';
   float: left;
@@ -1107,16 +1108,11 @@ footer .wrapper { width: 62.3%; }
   transition: all 0.5s ease;
 }
 
-.prevBtn span:hover::before,.nextBtn span:hover::before {
-  border: 2px solid rgb(0,0,0);
-  background: rgb(0,0,0);
-  color:  rgb(255,255,255);
-}
-
 .prevBtn span::before {
   content: '\f053';
   left: -45px;
 }
+
 .nextBtn span::before {
   content: '\f054';
   right: -45px;
@@ -1165,6 +1161,14 @@ footer .wrapper { width: 62.3%; }
   /* category page start */
   .category-list a:hover { color: rgb(47,132,214); }
   /* category page start */
+  /* modal start */
+  .prevBtn span:hover::before,.nextBtn span:hover::before {
+    border: 2px solid rgb(0,0,0);
+    background: rgb(0,0,0);
+    color:  rgb(255,255,255);
+  }
+
+  /* modal end */
 }
 
 /*media query starts*/
