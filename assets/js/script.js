@@ -103,10 +103,13 @@ function sortProduct(li, products) {
     var productCategory = product.dataset.category;
     if (key[1] === 'everything') {
       product.classList.remove('hide-content');
+      product.classList.add('active-product');
     } else if (key[1] !== productCategory) {
+      product.classList.remove('active-product');
       product.classList.add('hide-content');
     } else {
       product.classList.remove('hide-content');
+      product.classList.add('active-product');
     }
   })
 }
@@ -188,13 +191,11 @@ if (priceForm) {
     var minPrice = Number(priceForm.querySelector('.min').value),
       maxPrice = Number(priceForm.querySelector('.max').value),
       activeList = document.querySelector('.active-list');
-    // console.log(minPrice);
-    // console.log(maxPrice);
     productList.forEach(function (product) {
       var productMin = Number(product.dataset.min),
         productMax = Number(product.dataset.max);
-        console.log(productMin);
-        console.log(productMax);
+      console.log(productMin);
+      console.log(productMax);
       if ((minPrice < productMin || maxPrice > productMax) && (product.dataset.category == activeList.dataset.list)) {
         product.classList.remove('hide-content');
       } else {
@@ -203,24 +204,19 @@ if (priceForm) {
     })
   })
 }
-
-
-
-
-
 // category page function end
 
 // modal function
 if (header) {
-  var productFigure = document.querySelectorAll('.product-image'),
-    productImage = document.querySelectorAll('.product-image img');
+  var activeList = document.querySelectorAll('.active-product'),
+    productImage = document.querySelectorAll('.active-product img');
   // Image function
   productImage.forEach(function (image, i) {
     var imageSource = image.src;
     image.index = i;
     image.addEventListener('click', function () {
-      imageModal = document.createElement('div'),
-        imageModal.classList.add('modalDiv');
+      var imageModal = document.createElement('div');
+      imageModal.classList.add('modalDiv');
       imageModal.innerHTML = `<div class="modal-content">
       <div class="cancel-btn">
           <span>cancel</span>
@@ -238,7 +234,7 @@ if (header) {
         </div>
       </div>`;
       document.body.appendChild(imageModal);
-
+      // modal variables
       var modal = document.querySelector('.modalDiv'),
         modalImage = document.querySelector('.modalDiv img'),
         prevBtn = document.querySelector('.prevBtn span'),
@@ -256,7 +252,7 @@ if (header) {
         // slider function
         nextBtn.addEventListener('click', function () {
           currentIndex++;
-          if (currentIndex > productFigure.length - 1) {
+          if (currentIndex > activeList.length - 1) {
             currentIndex = 0;
           }
           slider();
@@ -264,7 +260,7 @@ if (header) {
         prevBtn.addEventListener('click', function () {
           currentIndex--;
           if (currentIndex < 0) {
-            currentIndex = productFigure.length - 1;
+            currentIndex = activeList.length - 1;
           }
           slider();
         });
