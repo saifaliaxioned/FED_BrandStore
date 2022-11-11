@@ -400,7 +400,7 @@ nav {
   gap: 23px 14px;
 }
 
-.product-list { flex: 1 0 18.5%; }
+.home-page .product-list { flex: 1 0 18.5%; }
 
 .product-details {
   display: flex;
@@ -647,7 +647,7 @@ nav {
     transparent 100%
     );
     -webkit-appearance: none;
-  }
+}
 
 .price-form .input-group > input::-webkit-slider-thumb {
   width: 14px;
@@ -731,7 +731,7 @@ nav {
   gap: 10px;
 }
 
-.seller-list .product-image { flex-basis: 25%; }
+.seller-product-image { flex-basis: 25%; }
 .seller-list h3 { padding: 0 0 5px; }
 .seller-list .product-price { padding: 0; }
 .seller-list .product-price,.seller-list h3 { font-weight: normal; }
@@ -780,7 +780,7 @@ nav {
   gap: 25px 14px;
 }
 
-.store-container .product-list { flex: 1 0 23.5%; }
+.store-container .product-list { flex-basis: 31.5%; }
 .store-container .product-list h3 { font-size: 10px; }
 /* product list end */
 
@@ -1177,6 +1177,9 @@ footer .wrapper { width: 62.3%; }
     font-size: 40px;
   }
   /* banner section end */
+  /* category page start */
+  .store-container .product-list { flex-basis: 29.5%; }
+  /* category page end */
 }  
 /*media query for 1024px starts here*/
 @media only screen and (max-width: 1024px) { 
@@ -1225,6 +1228,10 @@ footer .wrapper { width: 62.3%; }
   .footer-list:not(:first-child) { flex-basis: 20%; }
   .footer-list:last-child { flex-basis: 40%; }
   /* footer end */
+
+  /* category page start */
+  .store-container .product-list { flex-basis: 44.6%; }
+  /* category page end */
 }
 /*media query for 768px starts here*/
 @media only screen and (max-width: 768px) {
@@ -1340,7 +1347,7 @@ footer .wrapper { width: 62.3%; }
 
   /* store start */
   .store-container { padding: 20px; }
-  .store-container .product-list { flex: 1 0 45.5%; }
+  .store-container .product-list { flex-basis: 43.5%; }
   /* store end */
   /* category page end */
 }
@@ -1462,7 +1469,7 @@ footer .wrapper { width: 62.3%; }
   /* category page start */
   /* sellers part start */
   .seller-list { flex-basis: 100%; }
-  .seller-list .product-image { flex-basis: 15%; }
+  .seller-product-image { flex-basis: 15%; }
   .seller-list .product-details h3 { font-size: 12px; }
   /* sellers part end */
   /* category page end */
