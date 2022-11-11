@@ -26,10 +26,12 @@ function checkStorage() {
     location.href = 'login.html';
   }
 }
+
 // local storage create function
 function createStorage(username, password) {
   localStorage.setItem('user', [username, password]);
 }
+
 // local storage clear function 
 function clearStorage() {
   localStorage.clear();
@@ -50,6 +52,7 @@ function validateInput(form) {
   }
   return valid;
 }
+
 // error function
 function validateError(inputDiv, valid, message) {
   var valid;
@@ -91,7 +94,7 @@ if (logoutBtn) {
 }
 
 // category page function start
-// filter function
+// product filter function
 function sortProduct(li, products) {
   var key = document.URL.split('?');
   li.forEach(function (contentList) {
@@ -115,9 +118,12 @@ function sortProduct(li, products) {
 }
 // condition use to avoid errors on other pages
 if (priceForm) {
+  // product sort function use for nav
   sortProduct(navList, productList);
+  // product sort function use for sidebar categories
   sortProduct(categoryList, productList);
-  // price range
+
+  // price range function start
   var thumbsize = 14;
   function draw(slider, splitvalue) {
     /* set function vars */
@@ -161,8 +167,8 @@ if (priceForm) {
   priceForm.setAttribute('data-thumbsize', thumbsize);
   priceForm.setAttribute('data-rangewidth', priceForm.offsetWidth);
   /* dynamic price */
-  var lower = priceForm.querySelector('.min-price');
-  var upper = priceForm.querySelector('.max-price');
+  var lower = priceForm.querySelector('.min-price'),
+    upper = priceForm.querySelector('.max-price');
   lower.classList.add('lower', 'value');
   upper.classList.add('upper', 'value');
   lower.innerText = rangemin;
@@ -201,6 +207,7 @@ if (priceForm) {
       }
     })
   })
+  // price range function end
 }
 // category page function end
 
@@ -212,6 +219,7 @@ if (clientItems) {
     list.classList.add('active-product');
   })
 }
+
 // this condition use to avoid errors on login page
 if (header) {
   var activeList = document.querySelectorAll('.active-product'),
@@ -249,13 +257,16 @@ if (header) {
       currentIndex = image.index;
       // Modal function
       if (modal) {
+        // modal remove function
         modal.addEventListener('click', function (e) {
           if (e.target === modal || e.target === modal.children[0].children[0].children[0]) {
             modal.remove();
             document.documentElement.classList.remove('remove-scroll');
           };
         });
+
         // modal slider function
+        // modal next button function
         nextBtn.addEventListener('click', function () {
           currentIndex++;
           if (currentIndex > activeList.length - 1) {
@@ -263,6 +274,7 @@ if (header) {
           }
           slider();
         });
+        // modal previous button function
         prevBtn.addEventListener('click', function () {
           currentIndex--;
           if (currentIndex < 0) {
@@ -270,6 +282,7 @@ if (header) {
           }
           slider();
         });
+        // modal image slider function
         function slider() {
           modalImage.src = productImage[currentIndex].src;
         }
@@ -287,6 +300,7 @@ if (header) {
 }
 
 // logo slider function
+// condition use to avoid errors on other pages
 if (clientItems) {
   var containerDimension = clientItems.getBoundingClientRect(),
     clientList = document.querySelectorAll('.clients-list'),
@@ -294,17 +308,19 @@ if (clientItems) {
     logoPrev = document.querySelector('.prev'),
     logoNext = document.querySelector('.next'),
     interval = setInterval(autoPlay, 3000);
+
   // autoplay slider function
   function autoPlay() {
     clientItems.scrollLeft += containerWidth;
-    var listLength = clientList.length - 1;
-    var lists = clientList[listLength].getBoundingClientRect().right,
+    var listLength = clientList.length - 1,
+      lists = clientList[listLength].getBoundingClientRect().right,
       clientItemsWidth = clientItems.clientWidth,
       widthAdd = clientItems.getBoundingClientRect().left + clientItemsWidth;
     if (widthAdd == lists) {
       clientItems.scrollBy(-(listLength * clientList[0].clientWidth), 0);
     }
   }
+
   // logo slider function for all breakpoints
   function logoSlider(screenOne, screenTwo, screenThree, screenFour, screenFive, screenSix, screenSeven) {
     if (window.innerWidth >= 1245) {
