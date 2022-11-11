@@ -113,7 +113,7 @@ function sortProduct(li, products) {
     }
   })
 }
-
+// condition use to avoid errors on other pages
 if (priceForm) {
   sortProduct(navList, productList);
   sortProduct(categoryList, productList);
@@ -212,6 +212,7 @@ if (clientItems) {
     list.classList.add('active-product');
   })
 }
+// this condition use to avoid errors on login page
 if (header) {
   var activeList = document.querySelectorAll('.active-product'),
     productImage = document.querySelectorAll('.active-product img');
@@ -254,7 +255,7 @@ if (header) {
             document.documentElement.classList.remove('remove-scroll');
           };
         });
-        // slider function
+        // modal slider function
         nextBtn.addEventListener('click', function () {
           currentIndex++;
           if (currentIndex > activeList.length - 1) {
@@ -304,7 +305,7 @@ if (clientItems) {
       clientItems.scrollBy(-(listLength * clientList[0].clientWidth), 0);
     }
   }
-  // slider function for all breakpoints
+  // logo slider function for all breakpoints
   function logoSlider(screenOne, screenTwo, screenThree, screenFour, screenFive, screenSix, screenSeven) {
     if (window.innerWidth >= 1245) {
       clientItems.scrollBy(screenSeven, 0);
