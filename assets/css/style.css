@@ -852,6 +852,7 @@ nav {
 }
 
 .min-price,.max-price { font-weight: 600; }
+.min-price::before,.max-price::before { content: '$'; }
 /* price form end */
 
 /* categories part start */
