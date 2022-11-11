@@ -194,8 +194,6 @@ if (priceForm) {
     productList.forEach(function (product) {
       var productMin = Number(product.dataset.min),
         productMax = Number(product.dataset.max);
-      console.log(productMin);
-      console.log(productMax);
       if ((minPrice < productMin || maxPrice > productMax) && (product.dataset.category == activeList.dataset.list)) {
         product.classList.remove('hide-content');
       } else {
@@ -207,6 +205,13 @@ if (priceForm) {
 // category page function end
 
 // modal function
+// this condition use to avoid errors on other pages
+if (clientItems) {
+  // active class adding to access modal on home page
+  productList.forEach(function (list) {
+    list.classList.add('active-product');
+  })
+}
 if (header) {
   var activeList = document.querySelectorAll('.active-product'),
     productImage = document.querySelectorAll('.active-product img');
